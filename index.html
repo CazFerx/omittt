@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id="form" method="get">
+        <label for="nombre">Nombre</label>
+        <input type="text" required name="nombre" id="nombre" placeholder="Tu nombre">
+        <label for="ci">Ci</label>
+        <input type="text" name="ci" id="ci" placeholder="ci">
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        let form = document.querySelector('#form');
+        form.addEventListener('submit',(evt)=>{
+            function isLetra(dato){
+                //regex
+                for(let i=0;i<dato.legth;i++){
+                    console.log('-',dato[i]);
+                    if(dato[i]>='A' && dato[i]<='Z'||dato[i]>='a' && dato[i]<='z'){}
+                        return false;
+                }
+                return true;
+            }
+            function isNumero(dato){
+                for(let i=0;i<dato.legth;i++){
+                    if(dato[i]<='0'||dato>='9'){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            function isAlfanumerico(alpha){
+                for(let i=0;i<alpha.length;i++)
+                    if((alpha[i]<='A'|| alpha[i]>='Z')&&
+                        (alpha[i]<='a'|| alpha[i]>='z')&&
+                        (alpha[i]<='0'|| alpha[i]>='9')
+                    ){
+                        return false;
+                    }
+                return true;
+            }
+            console.log("enviando info");
+            //alert('pausa');
+            evt.preventDefault();
+            let nombre = document.querySelector('#nombre');
+            let ci = document.querySelector('#ci');
+        });
+        //funciones para 
+        //validar si es numero
+        //validar si es letra
+        //validar si es alfanumerico
+        //validar si es email
+    </script>
+</body>
+</html>
